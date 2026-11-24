@@ -1,0 +1,24 @@
+2:37:17 PM: Executing ':pde.Experiments.main()'…
+
+> Task :compileJava
+> Task :processResources NO-SOURCE
+> Task :classes
+
+> Task :pde.Experiments.main()
+CONVERGENCE STUDY (r = 0.4, t = 0.1, initial condition sin(pi x / L))
+    nx         dx      max error    ratio    order
+    11    0.10000   4.294140e-03      NaN      NaN
+    21    0.05000   1.062512e-03    4.041    2.015
+    41    0.02500   2.649500e-04    4.010    2.004
+    81    0.01250   6.619528e-05    4.003    2.001
+   161    0.00625   1.654619e-05    4.001    2.000
+
+STABILITY DEMO (square pulse, nx = 51, max|u| every 10 steps, 100 steps)
+r = 0.4:   1.00e+00  8.89e-01  7.38e-01  6.40e-01  5.72e-01  5.22e-01  4.83e-01  4.52e-01  4.26e-01  4.04e-01  3.85e-01
+r = 0.5:   1.00e+00  8.91e-01  7.37e-01  6.38e-01  5.70e-01  5.20e-01  4.81e-01  4.50e-01  4.24e-01  4.02e-01  3.83e-01
+r = 0.6:   1.00e+00  2.50e+00  4.61e+01  1.29e+03  3.56e+04  9.75e+05  2.68e+07  7.37e+08  2.04e+10  5.65e+11  1.57e+13
+
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.0/userguide/configuration_cache_enabling.html
+2:37:19 PM: Execution finished ':pde.Experiments.main()'.

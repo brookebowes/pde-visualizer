@@ -14,6 +14,10 @@ public class HeatSolver {
     private double time;       // current time
 
     public HeatSolver(double k, double L, int nx, double dt) {
+        this(k, L, nx, dt, true);
+    }
+
+    public HeatSolver(double k, double L, int nx, double dt, boolean enforceStability) {
         this.k = k;
         this.L = L;
         this.nx = nx;
@@ -23,7 +27,7 @@ public class HeatSolver {
         this.u = new double[nx];
         this.time = 0.0;
 
-        if (r > 0.5) {
+        if (enforceStability && r > 0.5) {
             throw new IllegalArgumentException(
                     "Unstable: r = k*dt/dx^2 = " + r + " must be <= 0.5");
         }
@@ -51,6 +55,10 @@ public class HeatSolver {
 
     public double[] getU() { return u.clone(); }
     public double getTime() { return time; }
+    public double getK() { return k; }
+    public double getL() { return L; }
+    public int getNx() { return nx; }
     public double getDx() { return dx; }
+    public double getDt() { return dt; }
     public double getR() { return r; }
 }
